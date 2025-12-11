@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source_files        = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
 
-  s.default_subspec     = 'https'
+  s.default_subspec     = 'local'
 
   s.dependency          'Flutter'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
@@ -132,4 +132,10 @@ Pod::Spec.new do |s|
     ss.ios.deployment_target = '10'
   end
 
+  s.subspec 'local' do |ss|
+    ss.source_files         = 'Classes/**/*'
+    ss.public_header_files  = 'Classes/**/*.h'
+    ss.vendored_frameworks = 'Frameworks/*.xcframework'
+    ss.ios.deployment_target = '12.1'
+  end
 end

@@ -9,10 +9,13 @@ buildscript {
     }
 }
 
+def libsDir = project.file('libs')
+
 rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        flatDir { dirs libsDir }
     }
 }
 
@@ -49,5 +52,6 @@ android {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.5.0'
-    implementation 'com.arthenica:ffmpeg-kit-https:6.0-2'
+    implementation ':ffmpeg-kit@aar'
+    api 'com.arthenica:smart-exception-java:0.2.1' // https://github.com/arthenica/ffmpeg-kit/wiki/Smart-Exception-Dependency
 }

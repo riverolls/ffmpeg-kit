@@ -1,5 +1,9 @@
-.DS_Store
+.ds_store
 .idea
 .pub
 .dart_tool
+example
 pubspec.lock
+
+!/android/libs/*.aar
+!/ios/frameworks/**/
